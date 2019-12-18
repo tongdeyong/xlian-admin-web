@@ -1,6 +1,6 @@
 package com.xlian.system.service;
 
-import com.xlian.system.dto.MenuDto;
+import com.xlian.system.vo.MenuVO;
 import com.xlian.system.model.Menu;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ public interface MenuService {
 
 	Menu findById(Integer id);
 
-	List<MenuDto> findByCondition(MenuDto menuDto);
+	List<MenuVO> findByCondition(MenuVO menuVO);
 
 	void save(Menu user);
 
@@ -19,5 +19,5 @@ public interface MenuService {
 
 	void deleteById(Integer id);
 
-    List<MenuDto> findAll(MenuDto menuDto);
+    List<MenuVO> findAll(MenuVO menuVO);
 }

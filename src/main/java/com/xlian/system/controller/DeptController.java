@@ -1,8 +1,8 @@
 package com.xlian.system.controller;
 
 import com.github.pagehelper.Page;
-import com.xlian.common.dto.Result;
-import com.xlian.system.dto.DeptDto;
+import com.xlian.common.vo.Result;
+import com.xlian.system.vo.DeptVO;
 import com.xlian.system.model.Dept;
 import com.xlian.system.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ public class DeptController {
     private DeptService deptService;
 
     @GetMapping("/list")
-    public Result getDeptPageList(DeptDto deptDto) {
-        List<DeptDto> deptList = deptService.findByCondition(deptDto);
+    public Result getDeptPageList(DeptVO deptVO) {
+        List<DeptVO> deptList = deptService.findByCondition(deptVO);
         if (deptList instanceof Page) {
             Page page = (Page) deptList;
             return Result.ok(deptList, page.getPageNum(), page.getPageSize(), (int) page.getTotal());
@@ -27,8 +27,8 @@ public class DeptController {
         return Result.ok(deptList);
     }
     @GetMapping("/all-list")
-    public Result getDeptAllList(DeptDto deptDto) {
-        List<DeptDto> deptList = deptService.findAll(deptDto);
+    public Result getDeptAllList(DeptVO deptVO) {
+        List<DeptVO> deptList = deptService.findAll(deptVO);
         return Result.ok(deptList);
     }
 

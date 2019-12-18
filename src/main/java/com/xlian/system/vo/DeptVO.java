@@ -1,4 +1,4 @@
-package com.xlian.system.dto;
+package com.xlian.system.vo;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class DeptDto {
+public class DeptVO {
 
     private Integer pageNum = 1;
 
@@ -39,5 +39,5 @@ public class DeptDto {
     /**
      * 子节点
      */
-    private List<DeptDto> children;
+    private List<DeptVO> children;
 }

@@ -2,7 +2,7 @@ package com.xlian.system.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.xlian.system.dao.DeptDao;
-import com.xlian.system.dto.DeptDto;
+import com.xlian.system.vo.DeptVO;
 import com.xlian.system.model.Dept;
 import com.xlian.system.service.DeptService;
 import org.apache.commons.collections.CollectionUtils;
@@ -25,21 +25,21 @@ public class DeptServiceImpl implements DeptService {
 	}
 
 	@Override
-	public List<DeptDto> findByCondition(DeptDto deptDto) {
-		PageHelper.startPage(deptDto.getPageNum(),deptDto.getPageSize());
-		List<DeptDto> deptList = deptDao.findByCondition(deptDto);
+	public List<DeptVO> findByCondition(DeptVO deptVO) {
+		PageHelper.startPage(deptVO.getPageNum(), deptVO.getPageSize());
+		List<DeptVO> deptList = deptDao.findByCondition(deptVO);
 		buildTreeData(deptList);
 		return deptList;
 	}
 
-	private void buildTreeData(List<DeptDto> deptDtoList){
-		Stack<DeptDto> stack = new Stack<>();
-		stack.addAll(deptDtoList);
+	private void buildTreeData(List<DeptVO> deptVOList){
+		Stack<DeptVO> stack = new Stack<>();
+		stack.addAll(deptVOList);
 		while (!stack.empty()) {
-			DeptDto pop = stack.pop();
-			DeptDto temp = new DeptDto();
+			DeptVO pop = stack.pop();
+			DeptVO temp = new DeptVO();
 			temp.setParentId(pop.getId());
-			List<DeptDto> children = deptDao.findByCondition(temp);
+			List<DeptVO> children = deptDao.findByCondition(temp);
 			if (CollectionUtils.isNotEmpty(children)) {
 				pop.setChildren(children);
 				children.forEach(stack::push);
@@ -64,16 +64,16 @@ public class DeptServiceImpl implements DeptService {
 	public void deleteById(Integer id) {
 		deptDao.deleteById(id);
 		//递归删除子节点
-		DeptDto deptDto = new DeptDto();
-		deptDto.setParentId(id);
-		List<DeptDto> deptDtoList = deptDao.findByCondition(deptDto);
-		Stack<DeptDto> stack = new Stack<>();
-		stack.addAll(deptDtoList);
+		DeptVO deptVO = new DeptVO();
+		deptVO.setParentId(id);
+		List<DeptVO> deptVOList = deptDao.findByCondition(deptVO);
+		Stack<DeptVO> stack = new Stack<>();
+		stack.addAll(deptVOList);
 		while (!stack.empty()) {
-			DeptDto pop = stack.pop();
+			DeptVO pop = stack.pop();
 			deptDao.deleteById(pop.getId());
-			deptDto.setParentId(pop.getId());
-			List<DeptDto> temp = deptDao.findByCondition(deptDto);
+			deptVO.setParentId(pop.getId());
+			List<DeptVO> temp = deptDao.findByCondition(deptVO);
 			if (CollectionUtils.isNotEmpty(temp)) {
 				temp.forEach(stack::push);
 			}
@@ -81,8 +81,8 @@ public class DeptServiceImpl implements DeptService {
 	}
 
 	@Override
-	public List<DeptDto> findAll(DeptDto deptDto) {
-		List<DeptDto> deptList = deptDao.findByCondition(deptDto);
+	public List<DeptVO> findAll(DeptVO deptVO) {
+		List<DeptVO> deptList = deptDao.findByCondition(deptVO);
 		buildTreeData(deptList);
 		return deptList;
 	}

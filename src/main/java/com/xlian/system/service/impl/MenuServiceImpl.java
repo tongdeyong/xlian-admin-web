@@ -2,7 +2,7 @@ package com.xlian.system.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.xlian.system.dao.MenuDao;
-import com.xlian.system.dto.MenuDto;
+import com.xlian.system.vo.MenuVO;
 import com.xlian.system.model.Menu;
 import com.xlian.system.service.MenuService;
 import org.apache.commons.collections.CollectionUtils;
@@ -25,22 +25,22 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<MenuDto> findByCondition(MenuDto menuDto) {
-        PageHelper.startPage(menuDto.getPageNum(), menuDto.getPageSize());
-        List<MenuDto> menuList = menuDao.findByCondition(menuDto);
+    public List<MenuVO> findByCondition(MenuVO menuVO) {
+        PageHelper.startPage(menuVO.getPageNum(), menuVO.getPageSize());
+        List<MenuVO> menuList = menuDao.findByCondition(menuVO);
         //查询子节点
         buildTreeData(menuList);
         return menuList;
     }
 
-    private void buildTreeData(List<MenuDto> menuList){
-        Stack<MenuDto> stack = new Stack<>();
+    private void buildTreeData(List<MenuVO> menuList){
+        Stack<MenuVO> stack = new Stack<>();
         stack.addAll(menuList);
         while (!stack.empty()) {
-            MenuDto pop = stack.pop();
-            MenuDto temp = new MenuDto();
+            MenuVO pop = stack.pop();
+            MenuVO temp = new MenuVO();
             temp.setParentId(pop.getId());
-            List<MenuDto> children = menuDao.findByCondition(temp);
+            List<MenuVO> children = menuDao.findByCondition(temp);
             if (CollectionUtils.isNotEmpty(children)) {
                 pop.setChildren(children);
                 children.forEach(stack::push);
@@ -66,16 +66,16 @@ public class MenuServiceImpl implements MenuService {
     public void deleteById(Integer id) {
         menuDao.deleteById(id);
         //递归删除子节点
-        MenuDto menuDto = new MenuDto();
-        menuDto.setParentId(id);
-        List<MenuDto> menuDtoList = menuDao.findByCondition(menuDto);
-        Stack<MenuDto> stack = new Stack<>();
-        stack.addAll(menuDtoList);
+        MenuVO menuVO = new MenuVO();
+        menuVO.setParentId(id);
+        List<MenuVO> menuVOList = menuDao.findByCondition(menuVO);
+        Stack<MenuVO> stack = new Stack<>();
+        stack.addAll(menuVOList);
         while (!stack.empty()) {
-            MenuDto pop = stack.pop();
+            MenuVO pop = stack.pop();
             menuDao.deleteById(pop.getId());
-            menuDto.setParentId(pop.getId());
-            List<MenuDto> temp = menuDao.findByCondition(menuDto);
+            menuVO.setParentId(pop.getId());
+            List<MenuVO> temp = menuDao.findByCondition(menuVO);
             if (CollectionUtils.isNotEmpty(temp)) {
                 temp.forEach(stack::push);
             }
@@ -83,8 +83,8 @@ public class MenuServiceImpl implements MenuService {
     }
 
     @Override
-    public List<MenuDto> findAll(MenuDto menuDto) {
-        List<MenuDto> menuList = menuDao.findByCondition(menuDto);
+    public List<MenuVO> findAll(MenuVO menuVO) {
+        List<MenuVO> menuList = menuDao.findByCondition(menuVO);
         //查询子节点
         buildTreeData(menuList);
         return menuList;

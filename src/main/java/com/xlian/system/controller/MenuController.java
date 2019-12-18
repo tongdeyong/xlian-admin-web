@@ -1,8 +1,8 @@
 package com.xlian.system.controller;
 
 import com.github.pagehelper.Page;
-import com.xlian.common.dto.Result;
-import com.xlian.system.dto.MenuDto;
+import com.xlian.common.vo.Result;
+import com.xlian.system.vo.MenuVO;
 import com.xlian.system.model.Menu;
 import com.xlian.system.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ public class MenuController {
     private MenuService menuService;
 
     @GetMapping("/list")
-    public Result getMenuPageList(MenuDto menuDto) {
-        List<MenuDto> menuList = menuService.findByCondition(menuDto);
+    public Result getMenuPageList(MenuVO menuVO) {
+        List<MenuVO> menuList = menuService.findByCondition(menuVO);
         if (menuList instanceof Page) {
             Page page = (Page) menuList;
             return Result.ok(menuList, page.getPageNum(), page.getPageSize(), (int) page.getTotal());
@@ -28,8 +28,8 @@ public class MenuController {
     }
 
     @GetMapping("/all-list")
-    public Result getMenuAllList(MenuDto menuDto) {
-        List<MenuDto> menuList = menuService.findAll(menuDto);
+    public Result getMenuAllList(MenuVO menuVO) {
+        List<MenuVO> menuList = menuService.findAll(menuVO);
         return Result.ok(menuList);
     }
 

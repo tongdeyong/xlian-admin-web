@@ -1,4 +1,4 @@
-package com.xlian.common.dto;
+package com.xlian.common.vo;
 
 import lombok.Data;
 

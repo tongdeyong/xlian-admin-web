@@ -9,7 +9,7 @@
 		where id = #{id}
 	</select>
 
-	<select id="findByCondition" parameterType="com.xlian.system.dto.DeptDto" resultType="com.xlian.system.dto.DeptDto">
+	<select id="findByCondition" parameterType="com.xlian.system.vo.DeptVO" resultType="com.xlian.system.vo.DeptVO">
 		select *
 		from
 		sys_dept

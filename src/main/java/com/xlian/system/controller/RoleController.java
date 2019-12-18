@@ -1,8 +1,8 @@
 package com.xlian.system.controller;
 
 import com.github.pagehelper.Page;
-import com.xlian.common.dto.Result;
-import com.xlian.system.dto.RoleDto;
+import com.xlian.common.vo.Result;
+import com.xlian.system.vo.RoleVO;
 import com.xlian.system.model.Role;
 import com.xlian.system.model.RoleMenu;
 import com.xlian.system.service.RoleService;
@@ -20,8 +20,8 @@ public class RoleController {
     private RoleService roleService;
 
     @GetMapping("/list")
-    public Result getRolePageList(RoleDto roleDto) {
-        List<Role> roleList = roleService.findByCondition(roleDto);
+    public Result getRolePageList(RoleVO roleVO) {
+        List<Role> roleList = roleService.findByCondition(roleVO);
         if (roleList instanceof Page) {
             Page page = (Page) roleList;
             return Result.ok(roleList, page.getPageNum(), page.getPageSize(), (int) page.getTotal());
@@ -71,12 +71,12 @@ public class RoleController {
 
     /**
      * 增加
-     * @param roleDto
+     * @param roleVO
      * @return
      */
     @PostMapping("/add-menu-permission")
-    public Result addMenuPermission(@RequestBody RoleDto roleDto) {
-        roleService.addMenuPermission(roleDto);
+    public Result addMenuPermission(@RequestBody RoleVO roleVO) {
+        roleService.addMenuPermission(roleVO);
         return Result.ok();
     }
 

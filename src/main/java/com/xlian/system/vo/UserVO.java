@@ -1,11 +1,11 @@
-package com.xlian.system.dto;
+package com.xlian.system.vo;
 
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class UserDto {
+public class UserVO {
 
     private Integer pageNum = 1;
 

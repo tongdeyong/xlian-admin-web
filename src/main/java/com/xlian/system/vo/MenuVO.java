@@ -1,4 +1,4 @@
-package com.xlian.system.dto;
+package com.xlian.system.vo;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class MenuDto {
+public class MenuVO {
 
     private Integer pageNum = 1;
 
@@ -42,6 +42,6 @@ public class MenuDto {
     /**
      * 子节点
      */
-    private List<MenuDto> children;
+    private List<MenuVO> children;
 
 }

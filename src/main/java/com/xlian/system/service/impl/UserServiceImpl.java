@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.xlian.common.utils.BeanUtil;
 import com.xlian.system.dao.UserDao;
 import com.xlian.system.dao.UserDeptDao;
-import com.xlian.system.dto.UserDto;
+import com.xlian.system.vo.UserVO;
 import com.xlian.system.model.User;
 import com.xlian.system.model.UserDept;
 import com.xlian.system.service.UserService;
@@ -32,18 +32,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findByCondition(UserDto userDto) {
-        PageHelper.startPage(userDto.getPageNum(), userDto.getPageSize());
-        if (userDto.getDeptId().equals(0)) {
-            userDto.setDeptId(null);
+    public List<User> findByCondition(UserVO userVO) {
+        PageHelper.startPage(userVO.getPageNum(), userVO.getPageSize());
+        if (userVO.getDeptId().equals(0)) {
+            userVO.setDeptId(null);
         }
-        return userDao.findByCondition(userDto);
+        return userDao.findByCondition(userVO);
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void save(UserDto userDto) {
-        User user = BeanUtil.copyProperties(userDto, User.class);
+    public void save(UserVO userVO) {
+        User user = BeanUtil.copyProperties(userVO, User.class);
         user.setCreateTime(new Date());
         user.setUpdateTime(new Date());
         userDao.save(user);
@@ -56,13 +56,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void update(UserDto userDto) {
-        User user = BeanUtil.copyProperties(userDto, User.class);
+    public void update(UserVO userVO) {
+        User user = BeanUtil.copyProperties(userVO, User.class);
         user.setUpdateTime(new Date());
         userDao.update(user);
 
         UserDept userDept = userDeptDao.findByUserId(user.getId());
-        userDept.setDeptId(userDto.getDeptId());
+        userDept.setDeptId(userVO.getDeptId());
         userDeptDao.update(userDept);
 
     }
@@ -76,9 +76,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(String username) {
-        UserDto userDto = new UserDto();
-        userDto.setUsername(username);
-        List<User> userList = userDao.findByCondition(userDto);
+        UserVO userVO = new UserVO();
+        userVO.setUsername(username);
+        List<User> userList = userDao.findByCondition(userVO);
         if (CollectionUtils.isEmpty(userList)) {
             log.error("{}-用户不存在", username);
             throw new RuntimeException("用户不存在");

@@ -1,6 +1,6 @@
 package com.xlian.system.service;
 
-import com.xlian.system.dto.RoleDto;
+import com.xlian.system.vo.RoleVO;
 import com.xlian.system.model.Role;
 import com.xlian.system.model.RoleMenu;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ public interface RoleService {
 
 	Role findById(Integer id);
 
-	List<Role> findByCondition(RoleDto roleDto);
+	List<Role> findByCondition(RoleVO roleVO);
 
 	void save(Role user);
 
@@ -22,5 +22,5 @@ public interface RoleService {
 
     List<RoleMenu> getRoleMenu(RoleMenu roleMenu);
 
-	void addMenuPermission(RoleDto roleDto);
+	void addMenuPermission(RoleVO roleVO);
 }

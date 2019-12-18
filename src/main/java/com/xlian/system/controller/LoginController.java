@@ -1,6 +1,6 @@
 package com.xlian.system.controller;
 
-import com.xlian.common.dto.Result;
+import com.xlian.common.vo.Result;
 import com.xlian.common.utils.MD5Utils;
 import com.xlian.system.model.User;
 import com.xlian.system.service.UserService;

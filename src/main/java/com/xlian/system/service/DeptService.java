@@ -1,7 +1,7 @@
 package com.xlian.system.service;
 
 
-import com.xlian.system.dto.DeptDto;
+import com.xlian.system.vo.DeptVO;
 import com.xlian.system.model.Dept;
 
 import java.util.List;
@@ -11,7 +11,7 @@ public interface DeptService {
 
 	Dept findById(Integer id);
 
-	List<DeptDto> findByCondition(DeptDto deptDto);
+	List<DeptVO> findByCondition(DeptVO deptVO);
 
 	void save(Dept dept);
 
@@ -19,5 +19,5 @@ public interface DeptService {
 
 	void deleteById(Integer id);
 
-    List<DeptDto> findAll(DeptDto deptDto);
+    List<DeptVO> findAll(DeptVO deptVO);
 }

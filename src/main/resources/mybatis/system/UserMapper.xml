@@ -9,7 +9,7 @@
 		where id = #{value}
 	</select>
 
-    <select id="findByCondition" parameterType="com.xlian.system.dto.UserDto" resultType="com.xlian.system.model.User">
+    <select id="findByCondition" parameterType="com.xlian.system.vo.UserVO" resultType="com.xlian.system.model.User">
         select *
         from sys_user su
         left join sys_user_dept sud on su.id = sud.user_id

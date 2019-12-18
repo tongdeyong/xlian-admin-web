@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.xlian.common.utils.BeanUtil;
 import com.xlian.system.dao.RoleDao;
 import com.xlian.system.dao.RoleMenuDao;
-import com.xlian.system.dto.RoleDto;
+import com.xlian.system.vo.RoleVO;
 import com.xlian.system.model.Role;
 import com.xlian.system.model.RoleMenu;
 import com.xlian.system.service.RoleService;
@@ -12,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Service
@@ -32,9 +30,9 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public List<Role> findByCondition(RoleDto roleDto) {
-        PageHelper.startPage(roleDto.getPageNum(), roleDto.getPageSize());
-        Role role = BeanUtil.copyProperties(roleDto, Role.class);
+    public List<Role> findByCondition(RoleVO roleVO) {
+        PageHelper.startPage(roleVO.getPageNum(), roleVO.getPageSize());
+        Role role = BeanUtil.copyProperties(roleVO, Role.class);
         return roleDao.findByCondition(role);
     }
 
@@ -63,17 +61,17 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void addMenuPermission(RoleDto roleDto) {
-        List<Integer> menuIdList = roleDto.getMenuIdList();
-        if (roleDto.getRoleId() == null || menuIdList == null) {
+    public void addMenuPermission(RoleVO roleVO) {
+        List<Integer> menuIdList = roleVO.getMenuIdList();
+        if (roleVO.getRoleId() == null || menuIdList == null) {
             throw new RuntimeException("参数有误");
         }
         //删除已有的权限值
-        roleMenuDao.deleteByRoleId(roleDto.getRoleId());
+        roleMenuDao.deleteByRoleId(roleVO.getRoleId());
         //持久化记录
         menuIdList.forEach(item->{
             RoleMenu model = new RoleMenu();
-            model.setRoleId(roleDto.getRoleId());
+            model.setRoleId(roleVO.getRoleId());
             model.setMenuId(item);
             roleMenuDao.save(model);
         });

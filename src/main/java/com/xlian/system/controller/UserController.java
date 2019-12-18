@@ -1,10 +1,10 @@
 package com.xlian.system.controller;
 
 import com.github.pagehelper.Page;
-import com.xlian.common.dto.Result;
+import com.xlian.common.vo.Result;
 import com.xlian.system.handler.UserHandler;
 import com.xlian.common.utils.MD5Utils;
-import com.xlian.system.dto.UserDto;
+import com.xlian.system.vo.UserVO;
 import com.xlian.system.model.User;
 import com.xlian.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,9 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/list")
-    public Result getUserPageList(UserDto userDto) {
+    public Result getUserPageList(UserVO userVO) {
         // 查询列表数据
-        List<User> userList = userService.findByCondition(userDto);
+        List<User> userList = userService.findByCondition(userVO);
         if (userList instanceof Page) {
             Page page = (Page) userList;
             return Result.ok(userList, page.getPageNum(), page.getPageSize(), (int) page.getTotal());
@@ -35,16 +35,16 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public Result save(@RequestBody UserDto userDto) {
-        userDto.setPassword(MD5Utils.encrypt(userDto.getUsername(), userDto.getPassword()));
-        userService.save(userDto);
+    public Result save(@RequestBody UserVO userVO) {
+        userVO.setPassword(MD5Utils.encrypt(userVO.getUsername(), userVO.getPassword()));
+        userService.save(userVO);
         return Result.ok();
     }
 
     @PostMapping("/update")
     @ResponseBody
-    public Result update(@RequestBody UserDto userDto) {
-        userService.update(userDto);
+    public Result update(@RequestBody UserVO userVO) {
+        userService.update(userVO);
         return Result.ok();
     }
 
@@ -58,8 +58,8 @@ public class UserController {
 
     @PostMapping("/resetPassword")
     @ResponseBody
-    public Result resetPassword(@RequestBody UserDto userDto) {
-        userService.update(userDto);
+    public Result resetPassword(@RequestBody UserVO userVO) {
+        userService.update(userVO);
         return Result.ok();
     }
 
