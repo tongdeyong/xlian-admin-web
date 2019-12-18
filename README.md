@@ -9,9 +9,9 @@
 
  1. 创建数据库xlian_admin，执行sql脚本xlian_admin.sql
  2. 打开IDEA
-    > ![avatar][image1]
+    > ![QHHOlq.png](https://s2.ax1x.com/2019/12/18/QHHOlq.png)
                
-    > ![avatar][image2]
+    > ![QHHjXV.png](https://s2.ax1x.com/2019/12/18/QHHjXV.png)
 
  3. 等待项目初始化，然后点击启动
 
