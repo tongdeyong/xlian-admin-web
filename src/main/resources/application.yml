@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/xlian_admin?characterEncoding=utf8
+    username: root
+    password: root
+mybatis:
+  mapper-locations: classpath:mybatis/**/*.xml
+  type-aliases-package: com.xlian.**
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.xlian: DEBUG

@@ -1,0 +1,446 @@
+2019-12-04 00:05:23.769 [restartedMain] INFO  com.xlian.XlianAdminWebApplication - Starting XlianAdminWebApplication on DESKTOP-A66MP9K with PID 13152 (E:\IdeaProject\xlian-admin-web\target\classes started by TONGXIN in E:\IdeaProject\xlian-admin-web)
+2019-12-04 00:05:23.771 [restartedMain] DEBUG com.xlian.XlianAdminWebApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-12-04 00:05:23.771 [restartedMain] INFO  com.xlian.XlianAdminWebApplication - No active profile set, falling back to default profiles: default
+2019-12-04 00:05:23.864 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-04 00:05:23.865 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-04 00:05:25.102 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-12-04 00:05:25.108 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-04 00:05:25.109 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-12-04 00:05:25.109 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-04 00:05:25.187 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-12-04 00:05:25.188 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1323 ms
+2019-12-04 00:05:25.344 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2019-12-04 00:05:25.497 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2019-12-04 00:05:25.943 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-04 00:05:26.192 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-12-04 00:05:26.215 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-12-04 00:05:26.231 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-04 00:05:26.234 [restartedMain] INFO  com.xlian.XlianAdminWebApplication - Started XlianAdminWebApplication in 2.743 seconds (JVM running for 3.392)
+2019-12-04 00:06:43.372 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-04 00:06:43.372 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-12-04 00:06:43.378 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2019-12-04 00:06:47.082 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/login
+2019-12-04 00:06:47.082 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : POST
+2019-12-04 00:06:47.083 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.LoginController.login
+2019-12-04 00:06:47.083 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 参数 : [User(Id=null, username=superadmin, name=null, password=sdhs635=-ej73,.ksdf93, email=null, mobile=null, sex=null, birth=null, image=null, status=null, createTime=null, updateTime=null), org.apache.catalina.connector.RequestFacade@23dd6b2a]
+2019-12-04 00:06:47.266 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.UserDao.findByCondition - ==>  Preparing: select * from sys_user WHERE username LIKE CONCAT('%', ?, '%') 
+2019-12-04 00:06:47.276 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.UserDao.findByCondition - ==> Parameters: superadmin(String)
+2019-12-04 00:06:47.289 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.UserDao.findByCondition - <==      Total: 1
+2019-12-04 00:06:47.292 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 耗时 : 210
+2019-12-04 00:06:47.343 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":{"birth":1574265083000,"createTime":1574265083000,"email":"895146920@qq.com","id":1,"image":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","mobile":"18171376336","name":"超级管理员","password":"1b181759fc521e7798fa1e87fa960d8f","sex":1,"status":1,"updateTime":1574265083000,"username":"superadmin"},"msg":"成功","status":200}
+2019-12-04 00:06:47.548 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/menu/list
+2019-12-04 00:06:47.548 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:06:47.548 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.MenuController.getMenuPageList
+2019-12-04 00:06:47.548 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 参数 : [MenuDto(pageNum=1, pageSize=10, id=null, parentId=0, name=null, url=null, type=null, icon=null, orderNum=null, status=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:06:47.585 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_menu WHERE parent_id = ? 
+2019-12-04 00:06:47.586 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:06:47.588 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:06:47.589 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:06:47.590 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:06:47.591 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 1
+2019-12-04 00:06:47.591 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:06:47.592 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 1(Integer)
+2019-12-04 00:06:47.593 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 4
+2019-12-04 00:06:47.594 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:06:47.594 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:06:47.594 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:06:47.594 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:06:47.595 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 8(Integer)
+2019-12-04 00:06:47.595 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:06:47.596 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:06:47.596 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 7(Integer)
+2019-12-04 00:06:47.596 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:06:47.597 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:06:47.597 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 6(Integer)
+2019-12-04 00:06:47.597 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:06:47.599 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 耗时 : 51
+2019-12-04 00:06:47.602 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1574561450000,"icon":"","id":6,"name":"菜单管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169033000,"url":"/menu"},{"createTime":1574567432000,"icon":"","id":7,"name":"用户管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169039000,"url":"/user"},{"createTime":1574567637000,"icon":"","id":8,"name":"部门管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169043000,"url":"/dept"},{"createTime":1574567919000,"icon":"","id":10,"name":"角色管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169046000,"url":"/role"}],"createTime":1574554658000,"icon":"el-icon-setting","id":1,"name":"系统管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"type":1,"updateTime":1575314067000,"url":"/system"}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:06:50.963 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:06:50.964 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:06:50.964 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:06:50.965 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=null, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:06:50.977 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept 
+2019-12-04 00:06:50.978 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 
+2019-12-04 00:06:50.987 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:06:50.989 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept LIMIT ? 
+2019-12-04 00:06:50.990 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:06:50.992 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:06:50.993 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:06:50.994 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:06:50.995 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:06:50.996 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 耗时 : 33
+2019-12-04 00:06:51.000 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:07:02.777 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:07:02.778 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:07:02.778 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:07:02.778 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:07:02.781 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:02.781 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:07:02.783 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:07:02.786 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:07:02.786 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:07:02.788 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:07:02.788 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:02.789 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:07:02.789 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:07:02.790 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 耗时 : 13
+2019-12-04 00:07:02.790 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:07:05.085 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:07:05.085 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:07:05.085 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:07:05.085 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=null, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:07:05.087 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept 
+2019-12-04 00:07:05.088 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 
+2019-12-04 00:07:05.090 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:07:05.092 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept LIMIT ? 
+2019-12-04 00:07:05.094 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:07:05.098 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:07:05.100 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:05.100 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:07:05.101 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:07:05.101 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 耗时 : 17
+2019-12-04 00:07:05.102 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:07:29.063 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:07:29.063 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:07:29.064 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:07:29.064 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:07:29.066 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:29.066 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:07:29.068 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:07:29.071 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:07:29.071 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:07:29.073 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:07:29.075 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:29.075 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:07:29.076 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:07:29.077 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 耗时 : 14
+2019-12-04 00:07:29.077 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:07:46.915 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/save
+2019-12-04 00:07:46.916 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : POST
+2019-12-04 00:07:46.916 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.save
+2019-12-04 00:07:46.916 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 参数 : [Dept(id=0, parentId=2, deptName=数据应用, status=1, orderNum=null, createTime=null, updateTime=null)]
+2019-12-04 00:07:46.921 [http-nio-8080-exec-9] DEBUG com.xlian.system.dao.DeptDao.save - ==>  Preparing: insert into sys_dept ( parent_id, `dept_name`, `status` ) values ( ?, ?, ? ) 
+2019-12-04 00:07:46.923 [http-nio-8080-exec-9] DEBUG com.xlian.system.dao.DeptDao.save - ==> Parameters: 2(Integer), 数据应用(String), 1(Integer)
+2019-12-04 00:07:46.945 [http-nio-8080-exec-9] DEBUG com.xlian.system.dao.DeptDao.save - <==    Updates: 1
+2019-12-04 00:07:46.946 [http-nio-8080-exec-9] DEBUG com.xlian.system.dao.DeptDao.save!selectKey - ==>  Preparing: select last_insert_id() 
+2019-12-04 00:07:46.946 [http-nio-8080-exec-9] DEBUG com.xlian.system.dao.DeptDao.save!selectKey - ==> Parameters: 
+2019-12-04 00:07:46.950 [http-nio-8080-exec-9] DEBUG com.xlian.system.dao.DeptDao.save!selectKey - <==      Total: 1
+2019-12-04 00:07:46.956 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 耗时 : 41
+2019-12-04 00:07:46.956 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 返回值 : {"msg":"成功","status":200}
+2019-12-04 00:07:47.158 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:07:47.158 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:07:47.158 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:07:47.158 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:07:47.159 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:47.160 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:07:47.161 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:07:47.162 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:07:47.162 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:07:47.163 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:07:47.164 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:47.164 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:07:47.165 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:07:47.166 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:47.167 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:07:47.168 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:07:47.168 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 耗时 : 10
+2019-12-04 00:07:47.168 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:07:55.410 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:07:55.410 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:07:55.410 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:07:55.410 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=null, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:07:55.411 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept 
+2019-12-04 00:07:55.412 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 
+2019-12-04 00:07:55.412 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:07:55.413 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept LIMIT ? 
+2019-12-04 00:07:55.414 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:07:55.415 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 2
+2019-12-04 00:07:55.416 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:55.416 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:07:55.417 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:07:55.418 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:55.419 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:07:55.420 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:07:55.420 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:07:55.421 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:07:55.421 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:07:55.421 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 耗时 : 11
+2019-12-04 00:07:55.422 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000},{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":2}
+2019-12-04 00:08:47.020 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/user/info
+2019-12-04 00:08:47.020 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:08:47.020 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/menu/list
+2019-12-04 00:08:47.020 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.UserController.getUserInfo
+2019-12-04 00:08:47.020 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:08:47.020 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 参数 : []
+2019-12-04 00:08:47.020 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.MenuController.getMenuPageList
+2019-12-04 00:08:47.020 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 参数 : [MenuDto(pageNum=1, pageSize=10, id=null, parentId=0, name=null, url=null, type=null, icon=null, orderNum=null, status=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:08:47.022 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_menu WHERE parent_id = ? 
+2019-12-04 00:08:47.022 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:08:47.023 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 耗时 : 4
+2019-12-04 00:08:47.023 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":{"birth":1574265083000,"createTime":1574265083000,"email":"895146920@qq.com","id":1,"image":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","mobile":"18171376336","name":"超级管理员","password":"1b181759fc521e7798fa1e87fa960d8f","sex":1,"status":1,"updateTime":1574265083000,"username":"superadmin"},"msg":"成功","status":200}
+2019-12-04 00:08:47.023 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:08:47.025 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:08:47.025 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:08:47.027 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 1
+2019-12-04 00:08:47.028 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:08:47.028 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 1(Integer)
+2019-12-04 00:08:47.030 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 4
+2019-12-04 00:08:47.031 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:08:47.031 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:08:47.031 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:47.032 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:08:47.032 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 8(Integer)
+2019-12-04 00:08:47.033 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:47.033 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:08:47.034 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 7(Integer)
+2019-12-04 00:08:47.034 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:47.035 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:08:47.035 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 6(Integer)
+2019-12-04 00:08:47.035 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:47.036 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 耗时 : 17
+2019-12-04 00:08:47.036 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1574561450000,"icon":"","id":6,"name":"菜单管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169033000,"url":"/menu"},{"createTime":1574567432000,"icon":"","id":7,"name":"用户管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169039000,"url":"/user"},{"createTime":1574567637000,"icon":"","id":8,"name":"部门管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169043000,"url":"/dept"},{"createTime":1574567919000,"icon":"","id":10,"name":"角色管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169046000,"url":"/role"}],"createTime":1574554658000,"icon":"el-icon-setting","id":1,"name":"系统管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"type":1,"updateTime":1575314067000,"url":"/system"}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:08:51.057 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:08:51.058 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:08:51.058 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:08:51.058 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:08:51.061 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:08:51.062 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:08:51.064 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:08:51.070 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:08:51.071 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:08:51.074 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:08:51.076 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:08:51.076 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:08:51.079 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:08:51.081 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:08:51.082 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:08:51.083 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:51.084 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 耗时 : 27
+2019-12-04 00:08:51.085 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:08:55.613 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:08:55.613 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:08:55.613 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:08:55.613 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=null, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:08:55.614 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept 
+2019-12-04 00:08:55.614 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 
+2019-12-04 00:08:55.615 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:08:55.616 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept LIMIT ? 
+2019-12-04 00:08:55.616 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:08:55.617 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 2
+2019-12-04 00:08:55.618 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:08:55.619 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:08:55.619 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:55.620 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:08:55.620 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:08:55.622 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:08:55.622 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:08:55.623 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:08:55.623 [http-nio-8080-exec-5] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:08:55.623 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 耗时 : 10
+2019-12-04 00:08:55.624 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000},{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":2}
+2019-12-04 00:09:23.615 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/user/info
+2019-12-04 00:09:23.615 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:09:23.615 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.UserController.getUserInfo
+2019-12-04 00:09:23.615 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 参数 : []
+2019-12-04 00:09:23.615 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/menu/list
+2019-12-04 00:09:23.616 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 耗时 : 0
+2019-12-04 00:09:23.616 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:09:23.616 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.MenuController.getMenuPageList
+2019-12-04 00:09:23.616 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 参数 : [MenuDto(pageNum=1, pageSize=10, id=null, parentId=0, name=null, url=null, type=null, icon=null, orderNum=null, status=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:09:23.616 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":{"birth":1574265083000,"createTime":1574265083000,"email":"895146920@qq.com","id":1,"image":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","mobile":"18171376336","name":"超级管理员","password":"1b181759fc521e7798fa1e87fa960d8f","sex":1,"status":1,"updateTime":1574265083000,"username":"superadmin"},"msg":"成功","status":200}
+2019-12-04 00:09:23.617 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_menu WHERE parent_id = ? 
+2019-12-04 00:09:23.618 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:09:23.619 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:09:23.620 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:09:23.621 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:09:23.622 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 1
+2019-12-04 00:09:23.623 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:09:23.623 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 1(Integer)
+2019-12-04 00:09:23.625 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 4
+2019-12-04 00:09:23.626 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:09:23.626 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:09:23.626 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:09:23.627 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:09:23.627 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 8(Integer)
+2019-12-04 00:09:23.627 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:09:23.627 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:09:23.627 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 7(Integer)
+2019-12-04 00:09:23.628 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:09:23.628 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:09:23.628 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 6(Integer)
+2019-12-04 00:09:23.628 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:09:23.629 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 耗时 : 14
+2019-12-04 00:09:23.629 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1574561450000,"icon":"","id":6,"name":"菜单管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169033000,"url":"/menu"},{"createTime":1574567432000,"icon":"","id":7,"name":"用户管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169039000,"url":"/user"},{"createTime":1574567637000,"icon":"","id":8,"name":"部门管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169043000,"url":"/dept"},{"createTime":1574567919000,"icon":"","id":10,"name":"角色管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169046000,"url":"/role"}],"createTime":1574554658000,"icon":"el-icon-setting","id":1,"name":"系统管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"type":1,"updateTime":1575314067000,"url":"/system"}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:09:23.710 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:09:23.710 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:09:23.710 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:09:23.710 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:09:23.710 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:09:23.711 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:09:23.711 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:09:23.712 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:09:23.713 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:09:23.714 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:09:23.714 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:09:23.714 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:09:23.716 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:09:23.717 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:09:23.717 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:09:23.717 [http-nio-8080-exec-10] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:09:23.718 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 耗时 : 9
+2019-12-04 00:09:23.719 [http-nio-8080-exec-10] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:20:47.994 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/user/info
+2019-12-04 00:20:47.994 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:20:47.994 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.UserController.getUserInfo
+2019-12-04 00:20:47.994 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 参数 : []
+2019-12-04 00:20:47.994 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 耗时 : 0
+2019-12-04 00:20:47.994 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/menu/list
+2019-12-04 00:20:47.994 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:20:47.994 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.MenuController.getMenuPageList
+2019-12-04 00:20:47.994 [http-nio-8080-exec-9] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":{"birth":1574265083000,"createTime":1574265083000,"email":"895146920@qq.com","id":1,"image":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","mobile":"18171376336","name":"超级管理员","password":"1b181759fc521e7798fa1e87fa960d8f","sex":1,"status":1,"updateTime":1574265083000,"username":"superadmin"},"msg":"成功","status":200}
+2019-12-04 00:20:47.994 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 参数 : [MenuDto(pageNum=1, pageSize=10, id=null, parentId=0, name=null, url=null, type=null, icon=null, orderNum=null, status=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:20:47.997 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_menu WHERE parent_id = ? 
+2019-12-04 00:20:47.998 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:20:47.999 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:20:48.000 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:20:48.000 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:20:48.002 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 1
+2019-12-04 00:20:48.002 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:20:48.003 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 1(Integer)
+2019-12-04 00:20:48.004 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 4
+2019-12-04 00:20:48.004 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:20:48.004 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:20:48.004 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:20:48.004 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:20:48.004 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 8(Integer)
+2019-12-04 00:20:48.005 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:20:48.005 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:20:48.005 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 7(Integer)
+2019-12-04 00:20:48.007 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:20:48.007 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:20:48.007 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 6(Integer)
+2019-12-04 00:20:48.007 [http-nio-8080-exec-8] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:20:48.008 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 耗时 : 14
+2019-12-04 00:20:48.008 [http-nio-8080-exec-8] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1574561450000,"icon":"","id":6,"name":"菜单管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169033000,"url":"/menu"},{"createTime":1574567432000,"icon":"","id":7,"name":"用户管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169039000,"url":"/user"},{"createTime":1574567637000,"icon":"","id":8,"name":"部门管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169043000,"url":"/dept"},{"createTime":1574567919000,"icon":"","id":10,"name":"角色管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169046000,"url":"/role"}],"createTime":1574554658000,"icon":"el-icon-setting","id":1,"name":"系统管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"type":1,"updateTime":1575314067000,"url":"/system"}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:20:48.093 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:20:48.093 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:20:48.093 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:20:48.093 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:20:48.094 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:20:48.094 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:20:48.095 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:20:48.096 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:20:48.096 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:20:48.097 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:20:48.098 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:20:48.098 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:20:48.099 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:20:48.099 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:20:48.099 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:20:48.100 [http-nio-8080-exec-1] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:20:48.100 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 耗时 : 7
+2019-12-04 00:20:48.100 [http-nio-8080-exec-1] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:22:47.670 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/user/info
+2019-12-04 00:22:47.671 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:22:47.671 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.UserController.getUserInfo
+2019-12-04 00:22:47.671 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 参数 : []
+2019-12-04 00:22:47.671 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 耗时 : 1
+2019-12-04 00:22:47.671 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/menu/list
+2019-12-04 00:22:47.671 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:22:47.671 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.MenuController.getMenuPageList
+2019-12-04 00:22:47.671 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 参数 : [MenuDto(pageNum=1, pageSize=10, id=null, parentId=0, name=null, url=null, type=null, icon=null, orderNum=null, status=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:22:47.671 [http-nio-8080-exec-2] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":{"birth":1574265083000,"createTime":1574265083000,"email":"895146920@qq.com","id":1,"image":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","mobile":"18171376336","name":"超级管理员","password":"1b181759fc521e7798fa1e87fa960d8f","sex":1,"status":1,"updateTime":1574265083000,"username":"superadmin"},"msg":"成功","status":200}
+2019-12-04 00:22:47.672 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_menu WHERE parent_id = ? 
+2019-12-04 00:22:47.673 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:22:47.673 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:22:47.674 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:22:47.675 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:22:47.675 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 1
+2019-12-04 00:22:47.676 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:22:47.676 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 1(Integer)
+2019-12-04 00:22:47.677 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 4
+2019-12-04 00:22:47.677 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:22:47.677 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 8(Integer)
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 7(Integer)
+2019-12-04 00:22:47.678 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:22:47.679 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:22:47.679 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 6(Integer)
+2019-12-04 00:22:47.679 [http-nio-8080-exec-3] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:22:47.679 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 耗时 : 8
+2019-12-04 00:22:47.680 [http-nio-8080-exec-3] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1574561450000,"icon":"","id":6,"name":"菜单管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169033000,"url":"/menu"},{"createTime":1574567432000,"icon":"","id":7,"name":"用户管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169039000,"url":"/user"},{"createTime":1574567637000,"icon":"","id":8,"name":"部门管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169043000,"url":"/dept"},{"createTime":1574567919000,"icon":"","id":10,"name":"角色管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169046000,"url":"/role"}],"createTime":1574554658000,"icon":"el-icon-setting","id":1,"name":"系统管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"type":1,"updateTime":1575314067000,"url":"/system"}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:22:47.760 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:22:47.760 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:22:47.760 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:22:47.760 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:22:47.761 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:22:47.761 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:22:47.762 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:22:47.763 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:22:47.763 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:22:47.764 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:22:47.764 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:22:47.764 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:22:47.765 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:22:47.765 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:22:47.765 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:22:47.766 [http-nio-8080-exec-4] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:22:47.766 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 耗时 : 6
+2019-12-04 00:22:47.766 [http-nio-8080-exec-4] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:24:18.819 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/user/info
+2019-12-04 00:24:18.819 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:24:18.819 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.UserController.getUserInfo
+2019-12-04 00:24:18.819 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 参数 : []
+2019-12-04 00:24:18.819 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 耗时 : 0
+2019-12-04 00:24:18.819 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/menu/list
+2019-12-04 00:24:18.819 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:24:18.819 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.MenuController.getMenuPageList
+2019-12-04 00:24:18.819 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 参数 : [MenuDto(pageNum=1, pageSize=10, id=null, parentId=0, name=null, url=null, type=null, icon=null, orderNum=null, status=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:24:18.819 [http-nio-8080-exec-5] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":{"birth":1574265083000,"createTime":1574265083000,"email":"895146920@qq.com","id":1,"image":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","mobile":"18171376336","name":"超级管理员","password":"1b181759fc521e7798fa1e87fa960d8f","sex":1,"status":1,"updateTime":1574265083000,"username":"superadmin"},"msg":"成功","status":200}
+2019-12-04 00:24:18.822 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_menu WHERE parent_id = ? 
+2019-12-04 00:24:18.822 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:24:18.824 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:24:18.825 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:24:18.825 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:24:18.826 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 1
+2019-12-04 00:24:18.827 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:24:18.828 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 1(Integer)
+2019-12-04 00:24:18.829 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 4
+2019-12-04 00:24:18.829 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:24:18.829 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 10(Integer)
+2019-12-04 00:24:18.830 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:24:18.831 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:24:18.831 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 8(Integer)
+2019-12-04 00:24:18.832 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:24:18.832 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:24:18.833 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 7(Integer)
+2019-12-04 00:24:18.833 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:24:18.833 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==>  Preparing: select * from sys_menu WHERE parent_id = ? 
+2019-12-04 00:24:18.834 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - ==> Parameters: 6(Integer)
+2019-12-04 00:24:18.834 [http-nio-8080-exec-6] DEBUG com.xlian.system.dao.MenuDao.findByCondition - <==      Total: 0
+2019-12-04 00:24:18.835 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 耗时 : 16
+2019-12-04 00:24:18.835 [http-nio-8080-exec-6] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1574561450000,"icon":"","id":6,"name":"菜单管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169033000,"url":"/menu"},{"createTime":1574567432000,"icon":"","id":7,"name":"用户管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169039000,"url":"/user"},{"createTime":1574567637000,"icon":"","id":8,"name":"部门管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169043000,"url":"/dept"},{"createTime":1574567919000,"icon":"","id":10,"name":"角色管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":1,"status":1,"type":1,"updateTime":1575169046000,"url":"/role"}],"createTime":1574554658000,"icon":"el-icon-setting","id":1,"name":"系统管理","orderNum":0,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"type":1,"updateTime":1575314067000,"url":"/system"}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:24:18.933 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 请求地址 : http://127.0.0.1:8080/system/dept/list
+2019-12-04 00:24:18.933 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - HTTP METHOD : GET
+2019-12-04 00:24:18.933 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - CLASS_METHOD : com.xlian.system.controller.DeptController.getDeptPageList
+2019-12-04 00:24:18.933 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 参数 : [DeptDto(pageNum=1, pageSize=10, id=null, parentId=0, deptName=null, status=null, orderNum=null, createTime=null, updateTime=null, children=null)]
+2019-12-04 00:24:18.934 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==>  Preparing: SELECT count(0) FROM sys_dept WHERE parent_id = ? 
+2019-12-04 00:24:18.934 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - ==> Parameters: 0(Integer)
+2019-12-04 00:24:18.935 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition_COUNT - <==      Total: 1
+2019-12-04 00:24:18.935 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? LIMIT ? 
+2019-12-04 00:24:18.936 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2019-12-04 00:24:18.937 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:24:18.938 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:24:18.939 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 2(Integer)
+2019-12-04 00:24:18.939 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 1
+2019-12-04 00:24:18.940 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==>  Preparing: select * from sys_dept WHERE parent_id = ? 
+2019-12-04 00:24:18.940 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - ==> Parameters: 3(Integer)
+2019-12-04 00:24:18.941 [http-nio-8080-exec-7] DEBUG com.xlian.system.dao.DeptDao.findByCondition - <==      Total: 0
+2019-12-04 00:24:18.941 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 耗时 : 8
+2019-12-04 00:24:18.941 [http-nio-8080-exec-7] INFO  com.xlian.system.aop.LogAop - 返回值 : {"data":[{"children":[{"createTime":1575389266000,"deptName":"数据应用","id":3,"pageNum":1,"pageSize":10,"parentId":2,"status":1,"updateTime":1575389266000}],"createTime":1574697846000,"deptName":"信息","id":2,"pageNum":1,"pageSize":10,"parentId":0,"status":1,"updateTime":1574697846000}],"msg":"成功","pageNum":1,"pageSize":10,"status":200,"total":1}
+2019-12-04 00:26:03.604 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-04 00:26:03.607 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

@@ -1,0 +1,20 @@
+2019-11-28 23:37:29.988 [restartedMain] INFO  com.xlian.XlianAdminWebApplication - Starting XlianAdminWebApplication on DESKTOP-A66MP9K with PID 16084 (E:\IdeaProject\xlian-admin-web\target\classes started by TONGXIN in E:\IdeaProject\xlian-admin-web)
+2019-11-28 23:37:29.990 [restartedMain] DEBUG com.xlian.XlianAdminWebApplication - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-11-28 23:37:29.990 [restartedMain] INFO  com.xlian.XlianAdminWebApplication - No active profile set, falling back to default profiles: default
+2019-11-28 23:37:30.040 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-28 23:37:30.040 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-28 23:37:30.985 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-11-28 23:37:30.990 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-11-28 23:37:30.991 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-11-28 23:37:30.991 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-28 23:37:31.053 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-11-28 23:37:31.053 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1013 ms
+2019-11-28 23:37:31.204 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2019-11-28 23:37:31.357 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2019-11-28 23:37:31.755 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-28 23:37:31.982 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2019-11-28 23:37:32.003 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2019-11-28 23:37:32.017 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-11-28 23:37:32.019 [restartedMain] INFO  com.xlian.XlianAdminWebApplication - Started XlianAdminWebApplication in 2.286 seconds (JVM running for 2.93)
+2019-11-29 00:26:59.605 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-29 00:26:59.607 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
