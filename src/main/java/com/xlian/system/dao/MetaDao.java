@@ -13,7 +13,7 @@ public interface MetaDao {
 	List<Table> listTable();
 
 
-	@Select("select column_name, data_type dataType, column_comment from information_schema.columns"
+	@Select("select column_name, data_type columnType, column_comment from information_schema.columns"
 			+ " where table_name = #{tableName} and table_schema = (select database()) order by ordinal_position")
 	List<Column> listColumn(String tableName);
 }

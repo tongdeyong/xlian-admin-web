@@ -11,7 +11,7 @@ public class Column {
 	/**
 	 * 列名类型
 	 */
-	private String dataType;
+	private String columnType;
 	/**
 	 * 列名备注
 	 */

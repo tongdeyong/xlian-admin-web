@@ -1,5 +1,7 @@
 //package com.xlian.common.utils;
 //
+//import com.xlian.system.model.Column;
+//import com.xlian.system.model.Table;
 //import org.apache.commons.lang.StringUtils;
 //import org.apache.commons.lang.WordUtils;
 //import org.apache.velocity.Template;
@@ -20,21 +22,13 @@
 //
 //
 //    public static List<String> getTemplates() {
-//        List<String> templates = new ArrayList<String>();
-//        templates.add("templates/common/generator/domain.java.vm");
-//        templates.add("templates/common/generator/Dao.java.vm");
-//        //templates.add("templates/common/generator/Mapper.java.vm");
-//        templates.add("templates/common/generator/Mapper.xml.vm");
-//        templates.add("templates/common/generator/Service.java.vm");
-//        templates.add("templates/common/generator/ServiceImpl.java.vm");
-//        templates.add("templates/common/generator/Controller.java.vm");
-//        templates.add("templates/common/generator/list.html.vm");
-//        templates.add("templates/common/generator/add.html.vm");
-//        templates.add("templates/common/generator/edit.html.vm");
-//        templates.add("templates/common/generator/list.js.vm");
-//        templates.add("templates/common/generator/add.js.vm");
-//        templates.add("templates/common/generator/edit.js.vm");
-//        //templates.add("templates/common/generator/menu.sql.vm");
+//        List<String> templates = new ArrayList<>();
+//        templates.add("templates/generator/domain.java.vm");
+//        templates.add("templates/generator/Dao.java.vm");
+//        templates.add("templates/generator/Mapper.xml.vm");
+//        templates.add("templates/generator/Service.java.vm");
+//        templates.add("templates/generator/ServiceImpl.java.vm");
+//        templates.add("templates/generator/Controller.java.vm");
 //        return templates;
 //    }
 //
@@ -43,27 +37,24 @@
 //     */
 //
 //
-//    public static void generatorCode(Map<String, String> table,
-//                                     List<Map<String, String>> columns, ZipOutputStream zip) {
+//    public static void generatorCode(Map<String, String> table, List<Map<String, String>> columns, ZipOutputStream zip) {
 //        //配置信息
-//        Configuration config = getConfig();
 //        //表信息
-//        TableDO tableDO = new TableDO();
-//        tableDO.setTableName(table.get("tableName"));
-//        tableDO.setComments(table.get("tableComment"));
+//        Table table1 = new Table();
+//        table1.setTableName(table.get("tableName"));
+//        table1.setTableComment(table.get("tableComment"));
 //        //表名转换成Java类名
-//        String className = tableToJava(tableDO.getTableName(), config.getString("tablePrefix"), config.getString("autoRemovePre"));
-//        tableDO.setClassName(className);
-//        tableDO.setClassname(StringUtils.uncapitalize(className));
+//        String className = tableToJava(table1.getTableName());
+//        table.setClassName(className);
+//        table.setClassname(StringUtils.uncapitalize(className));
 //
 //        //列信息
-//        List<ColumnDO> columsList = new ArrayList<>();
+//        List<Column> columnList = new ArrayList<>();
 //        for (Map<String, String> column : columns) {
-//            ColumnDO columnDO = new ColumnDO();
+//            Column columnDO = new Column();
 //            columnDO.setColumnName(column.get("columnName"));
-//            columnDO.setDataType(column.get("dataType"));
-//            columnDO.setComments(column.get("columnComment"));
-//            columnDO.setExtra(column.get("extra"));
+//            columnDO.setColumnType(column.get("columnType"));
+//            columnDO.setColumnComment(column.get("columnComment"));
 //
 //            //列名转换成Java属性名
 //            String attrName = columnToJava(columnDO.getColumnName());
@@ -139,13 +130,7 @@
 //    /**
 //     * 表名转换成Java类名
 //     */
-//    public static String tableToJava(String tableName, String tablePrefix, String autoRemovePre) {
-//        if (Constant.AUTO_REOMVE_PRE.equals(autoRemovePre)) {
-//            tableName = tableName.substring(tableName.indexOf("_") + 1);
-//        }
-//        if (StringUtils.isNotBlank(tablePrefix)) {
-//            tableName = tableName.replace(tablePrefix, "");
-//        }
+//    public static String tableToJava(String tableName) {
 //
 //        return columnToJava(tableName);
 //    }
@@ -179,9 +164,6 @@
 //            return packagePath + "dao" + File.separator + className + "Dao.java";
 //        }
 //
-////		if(template.contains("Mapper.java.vm")){
-////			return packagePath + "dao" + File.separator + className + "Mapper.java";
-////		}
 //
 //        if (template.contains("Service.java.vm")) {
 //            return packagePath + "service" + File.separator + className + "Service.java";
@@ -227,9 +209,6 @@
 //                    + "appjs" + File.separator + packageName + File.separator + classname + File.separator + "edit.js";
 //        }
 //
-////		if(template.contains("menu.sql.vm")){
-////			return className.toLowerCase() + "_menu.sql";
-////		}
 //
 //        return null;
 //    }
