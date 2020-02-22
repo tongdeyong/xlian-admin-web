@@ -1,19 +1,21 @@
 package com.xlian.system.controller;
 
 import com.github.pagehelper.Page;
+import com.xlian.common.utils.PageUtils;
 import com.xlian.common.vo.Result;
 import com.xlian.system.model.Column;
 import com.xlian.system.model.Table;
 import com.xlian.system.service.MetaService;
 import com.xlian.system.vo.ColumnVO;
+import com.xlian.system.vo.SqlQueryVO;
 import com.xlian.system.vo.TableVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -55,4 +57,20 @@ public class MetaController {
 
     }
 
+    @PostMapping("/query")
+    public Result query(@RequestBody SqlQueryVO queryVO) {
+        try {
+            if (StringUtils.isBlank(queryVO.getSql())) {
+                return Result.error("请输入sql");
+            }
+            if (queryVO.getSql().contains("update") || queryVO.getSql().contains("insert") || queryVO.getSql().contains("delete")) {
+                return Result.error("仅仅支持select语句");
+            }
+            List<Map<String, Object>> data = metaService.querySql(queryVO.getSql());
+            return Result.ok(PageUtils.page(data, queryVO.getPageNum(), queryVO.getPageSize()), queryVO.getPageNum(), queryVO.getPageSize(), data.size());
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            return Result.error(e.getMessage());
+        }
+    }
 }

@@ -1,0 +1,22 @@
+package com.xlian.${moudel}.service;
+
+import com.xlian.${moudel}.vo.${ClassName}VO;
+import com.xlian.${moudel}.model.${ClassName};
+
+import java.util.List;
+
+public interface ${ClassName}Service {
+
+    ${ClassName} findById(Integer id);
+
+    List<${ClassName}VO> findByCondition(${ClassName}VO ${className}VO);
+
+    void save(${ClassName} user);
+
+    int update(${ClassName} user);
+
+    int deleteById(Integer id);
+
+    List<${ClassName}VO> findAll(${ClassName}VO ${className}VO);
+
+}

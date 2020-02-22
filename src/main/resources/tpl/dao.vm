@@ -1,0 +1,20 @@
+package com.xlian.${module}.dao;
+
+import com.xlian.${module}.vo.${ClassName}VO;
+import com.xlian.${module}.model.${ClassName};
+
+import java.util.List;
+
+public interface ${ClassName}Dao {
+
+    ${ClassName} findById(Integer id);
+
+    List<${ClassName}VO> findByCondition(${ClassName}VO ${className}VO);
+
+    void save(${ClassName} user);
+
+    int update(${ClassName} user);
+
+    int deleteById(Integer id);
+
+}

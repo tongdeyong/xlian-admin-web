@@ -1,0 +1,25 @@
+package com.xlian.${module}.vo;
+
+import lombok.Data;
+
+#if($hasDate)
+import java.util.Date;
+#end
+import java.util.List;
+
+@Data
+public class ${ClassName}VO {
+
+    /**
+     * ${comment}
+     */
+    private Integer id;
+
+    #foreach($column in $columns)
+    /**
+     * $column.comment
+     */
+    private $column.type $column.name;
+
+    #end
+}

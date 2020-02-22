@@ -1,0 +1,56 @@
+package com.xlian.${module}.service.impl;
+
+import com.github.pagehelper.PageHelper;
+import com.xlian.${module}.dao.${ClassName}Dao;
+import com.xlian.${module}.vo.${ClassName}VO;
+import com.xlian.${module}.model.${ClassName};
+import com.xlian.${module}.service.${ClassName}Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+public class ${ClassName}ServiceImpl implements ${ClassName}Service {
+
+	@Autowired
+	private ${ClassName}Dao$ {className}Dao;
+
+	@Override
+	public ${ClassName} findById(Integer id) {
+		return ${className}Dao.findById(id);
+	}
+
+	@Override
+	public List<${ClassName}VO> findByCondition(${ClassName}VO ${className}VO) {
+		PageHelper.startPage(${className}VO.getPageNum(), ${className}VO.getPageSize());
+		List<${ClassName}VO> deptList = ${className}Dao.findByCondition(${className}VO);
+		return ${className}List;
+	}
+
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public void save(${ClassName} ${className}) {
+		deptDao.save(${className});
+	}
+
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public void update(${ClassName} ${className}) {
+		deptDao.update(${className});
+	}
+
+	@Override
+	@Transactional(rollbackFor = Exception.class)
+	public void deleteById(Integer id) {
+		${className}Dao.deleteById(id);
+	}
+
+	@Override
+	public List<${ClassName}VO> findAll(${ClassName}VO ${className}VO) {
+		List<${ClassName}VO> ${className}List = ${className}Dao.findByCondition(${className}VO);
+		return ${className}List;
+	}
+
+}
