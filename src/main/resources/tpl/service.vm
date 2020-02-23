@@ -1,7 +1,7 @@
-package com.xlian.${moudel}.service;
+package ${packageName}.${module}.service;
 
-import com.xlian.${moudel}.vo.${ClassName}VO;
-import com.xlian.${moudel}.model.${ClassName};
+import ${packageName}.${module}.vo.${ClassName}VO;
+import ${packageName}.${module}.model.${ClassName};
 
 import java.util.List;
 

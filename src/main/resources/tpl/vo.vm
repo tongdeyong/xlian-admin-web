@@ -1,4 +1,4 @@
-package com.xlian.${module}.vo;
+package ${packageName}.${module}.vo;
 
 import lombok.Data;
 
@@ -10,16 +10,15 @@ import java.util.List;
 @Data
 public class ${ClassName}VO {
 
-    /**
-     * ${comment}
-     */
-    private Integer id;
+    private Integer pageNum = 1;
+
+    private Integer pageSize = 10;
 
     #foreach($column in $columns)
     /**
      * $column.comment
      */
-    private $column.type $column.name;
+    private $column.type $column.attributeName;
 
     #end
 }

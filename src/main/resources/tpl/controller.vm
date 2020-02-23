@@ -1,10 +1,10 @@
-package com.xlian.${module}.controller;
+package ${packageName}.${module}.controller;
 
 import com.github.pagehelper.Page;
-import com.xlian.common.vo.Result;
-import com.xlian.${module}.vo.${ClassName}VO;
-import com.xlian.${module}.model.${ClassName};
-import com.xlian.${module}.service.${ClassName}Service;
+import ${packageName}.common.vo.Result;
+import ${packageName}.${module}.vo.${ClassName}VO;
+import ${packageName}.${module}.model.${ClassName};
+import ${packageName}.${module}.service.${ClassName}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

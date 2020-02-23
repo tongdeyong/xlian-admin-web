@@ -1,10 +1,10 @@
-package com.xlian.${module}.service.impl;
+package ${packageName}.${module}.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.xlian.${module}.dao.${ClassName}Dao;
-import com.xlian.${module}.vo.${ClassName}VO;
-import com.xlian.${module}.model.${ClassName};
-import com.xlian.${module}.service.${ClassName}Service;
+import ${packageName}.${module}.dao.${ClassName}Dao;
+import ${packageName}.${module}.vo.${ClassName}VO;
+import ${packageName}.${module}.model.${ClassName};
+import ${packageName}.${module}.service.${ClassName}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
