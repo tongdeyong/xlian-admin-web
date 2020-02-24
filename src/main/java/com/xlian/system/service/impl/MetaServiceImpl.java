@@ -1,6 +1,8 @@
 package com.xlian.system.service.impl;
 
 import com.github.pagehelper.PageHelper;
+import com.xlian.common.enums.JavaTypeHandlerEnum;
+import com.xlian.system.component.CodeGenComponent;
 import com.xlian.system.dao.MetaDao;
 import com.xlian.system.model.Column;
 import com.xlian.system.model.Table;
@@ -14,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +31,9 @@ public class MetaServiceImpl implements MetaService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private CodeGenComponent codeGenComponent;
 
     @Override
     public List<Table> listTable(TableVO tableVO) {
@@ -47,16 +53,25 @@ public class MetaServiceImpl implements MetaService {
     }
 
     @Override
-    public void generateSql(TableVO tableVO) {
+    public ByteArrayOutputStream generateSql(TableVO tableVO) {
         List<String> tableNameList = tableVO.getTableNameList();
         String packageName = tableVO.getPackageName();
         String module = tableVO.getModule();
         List<Map<String, Object>> param = new ArrayList<>();
         tableNameList.forEach(table -> {
             Map<String, Object> data = new HashMap<>();
-            data.put("ClassName", firstCharToUpperCase(CaseUtils.toCamelCase(removeTablePrefix(table), false, '_')));
+            if (tableVO.getRemoveTablePrefix()) {
+                data.put("ClassName", firstCharToUpperCase(CaseUtils.toCamelCase(removeTablePrefix(table), false, '_')));
+            } else {
+                data.put("ClassName", firstCharToUpperCase(CaseUtils.toCamelCase(table, false, '_')));
+            }
             data.put("tableName", table);
-            data.put("className", CaseUtils.toCamelCase(removeTablePrefix(table), false, '_'));
+            if (tableVO.getRemoveTablePrefix()) {
+                data.put("className", CaseUtils.toCamelCase(removeTablePrefix(table), false, '_'));
+            } else {
+                data.put("className", CaseUtils.toCamelCase(table, false, '_'));
+
+            }
             data.put("module", module);
             data.put("packageName", packageName);
             data.put("primaryKeyType", "Integer");
@@ -70,11 +85,21 @@ public class MetaServiceImpl implements MetaService {
                 column.put("attributeName", CaseUtils.toCamelCase(item.getColumnName(), false, '_'));
                 column.put("name", item.getColumnName());
                 column.put("comment", item.getColumnComment());
-                column.put("type", item.getColumnType());
+                JavaTypeHandlerEnum javaTypeHandlerEnum = JavaTypeHandlerEnum.getByJdbcType(item.getColumnType().toUpperCase());
+                String javaType = javaTypeHandlerEnum.getJavaType();
+                if (javaType.equals("Date")) {
+                    data.put("hasDate", true);
+                }
+                if (item.getColumnKey().equals("PRI")) {
+                    data.put("primaryKeyType", javaType);
+                }
+                column.put("type", javaType);
                 columns.add(column);
             });
+            data.put("columns", columns);
             param.add(data);
         });
+        return codeGenComponent.generateCode(param, tableVO.getPackageName().replace(".", "/"), tableVO.getModule());
     }
 
     private static String removeTablePrefix(String tableName) {
@@ -88,7 +113,7 @@ public class MetaServiceImpl implements MetaService {
         if (StringUtils.isBlank(str)) {
             return "";
         }
-        return new String(new char[]{str.charAt(0)}) + str.substring(1);
+        return new String(new char[]{str.charAt(0)}).toUpperCase() + str.substring(1);
     }
 
     public static void main(String[] args) {

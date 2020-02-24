@@ -17,4 +17,9 @@ public class Column {
 	 */
 	private String columnComment;
 
+	/**
+	 * 主键标识
+	 */
+	private String columnKey;
+
 }

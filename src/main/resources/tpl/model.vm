@@ -8,8 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class ${ClassName}VO {
-
+public class ${ClassName} {
 
     #foreach($column in $columns)
     /**

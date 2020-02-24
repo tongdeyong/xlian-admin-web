@@ -15,11 +15,11 @@ public class TableVO {
 
     private List<String> tableNameList;
 
-    private String packageName;
+    private String packageName = "com.xlian";
 
-    private String module;
+    private String module = "system";
 
-    private Boolean removeTablePrefix;
+    private Boolean removeTablePrefix = false;
 
 
 }

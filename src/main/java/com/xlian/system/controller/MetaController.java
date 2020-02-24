@@ -1,5 +1,6 @@
 package com.xlian.system.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.xlian.common.utils.PageUtils;
 import com.xlian.common.vo.Result;
@@ -10,11 +11,16 @@ import com.xlian.system.vo.ColumnVO;
 import com.xlian.system.vo.SqlQueryVO;
 import com.xlian.system.vo.TableVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -75,10 +81,22 @@ public class MetaController {
         }
     }
 
-    @PostMapping("/generateSql")
-    public void generateSql(@RequestBody TableVO tableVO, HttpServletResponse response) {
+    @GetMapping("/generateCode")
+    public void generateSql(TableVO tableVO, HttpServletResponse response) {
         try {
-            metaService.generateSql(tableVO);
+            response.setCharacterEncoding("utf-8");
+            ServletOutputStream outputStream = response.getOutputStream();
+            if (CollectionUtils.isEmpty(tableVO.getTableNameList())) {
+                response.setContentType("application/json");
+                outputStream.write(JSON.toJSONString(Result.error("请选择表")).getBytes(StandardCharsets.UTF_8));
+                outputStream.close();
+                return;
+            }
+            ByteArrayOutputStream byteArrayOutputStream = metaService.generateSql(tableVO);
+            response.setContentType("multipart/form-data");
+            response.setHeader("Content-Disposition", "attachment;fileName=code.zip");
+            outputStream.write(byteArrayOutputStream.toByteArray());
+            outputStream.close();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }

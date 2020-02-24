@@ -5,6 +5,7 @@ import com.xlian.system.model.Table;
 import com.xlian.system.vo.ColumnVO;
 import com.xlian.system.vo.TableVO;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -16,5 +17,5 @@ public interface MetaService {
 
     List<Map<String, Object>> querySql(String sql);
 
-    void generateSql(TableVO tableVO);
+    ByteArrayOutputStream generateSql(TableVO tableVO);
 }
