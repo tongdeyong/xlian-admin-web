@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
@@ -71,6 +72,15 @@ public class MetaController {
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return Result.error(e.getMessage());
+        }
+    }
+
+    @PostMapping("/generateSql")
+    public void generateSql(@RequestBody TableVO tableVO, HttpServletResponse response) {
+        try {
+            metaService.generateSql(tableVO);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
         }
     }
 }

@@ -15,4 +15,6 @@ public interface MetaService {
     List<Column> listColumn(ColumnVO columnVO);
 
     List<Map<String, Object>> querySql(String sql);
+
+    void generateSql(TableVO tableVO);
 }
