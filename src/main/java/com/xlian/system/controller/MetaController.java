@@ -81,8 +81,8 @@ public class MetaController {
         }
     }
 
-    @GetMapping("/generateCode")
-    public void generateSql(TableVO tableVO, HttpServletResponse response) {
+    @PostMapping("/generateCode")
+    public void generateSql(@RequestBody TableVO tableVO, HttpServletResponse response) {
         try {
             response.setCharacterEncoding("utf-8");
             ServletOutputStream outputStream = response.getOutputStream();
