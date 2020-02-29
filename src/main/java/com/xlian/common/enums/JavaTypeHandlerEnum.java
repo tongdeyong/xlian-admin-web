@@ -5,6 +5,7 @@ public enum JavaTypeHandlerEnum {
     CHAR("CHAR", "String"),
     VARCHAR("VARCHAR", "String"),
     LONGVARCHAR("LONGVARCHAR", "String"),
+    MEDIUMTEXT("MEDIUMTEXT", "String"),
     NUMERIC("NUMERIC", "BigDecimal"),
     DECIMAL("DECIMAL", "BigDecimal"),
     BIT("BIT", "Boolean"),
@@ -18,6 +19,7 @@ public enum JavaTypeHandlerEnum {
     FLOAT("FLOAT", "Float"),
     DOUBLE("DOUBLE", "Double"),
     DATE("DATE", "Date"),
+    DATETIME("DATETIME", "Date"),
     TIME("TIME", "Time"),
     TIMESTAMP("TIMESTAMP", "Date");
 

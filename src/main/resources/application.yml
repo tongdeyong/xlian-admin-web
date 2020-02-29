@@ -19,6 +19,6 @@ logging:
   level:
     com.xlian: DEBUG
 static-resource:
-  path: D:/fe
+  path: D:/fe/
 
 
