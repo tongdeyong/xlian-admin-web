@@ -66,7 +66,7 @@ public class SysFeVersionController {
         }
     }
 
-    @PostMapping("/delete/id}")
+    @PostMapping("/delete/{id}")
     public Result remove(@PathVariable Integer id) {
         try {
             sysFeVersionService.deleteById(id);
