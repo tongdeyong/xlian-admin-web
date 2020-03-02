@@ -28,7 +28,7 @@ public class FileController {
 
     @PostMapping("/uploadFeFile")
     public Result uploadFeFile(@NotNull MultipartFile file, @NotNull String directory) {
-        String pathName = System.getProperties().getProperty("user.home") + staticResourcePath + directory;
+        String pathName = System.getProperties().getProperty("user.home") + staticResourcePath  + directory;
         File fileObj = new File(pathName);
         //创建文件夹存在多线程并发问题，可能导致文件夹创建失败
         synchronized (FileController.class) {

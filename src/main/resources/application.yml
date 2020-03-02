@@ -1,6 +1,8 @@
 server:
   port: 9090
 spring:
+  profiles:
+    active: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
@@ -27,6 +29,6 @@ logging:
   level:
     com.xlian: DEBUG
 static-resource:
-  path: /work/fe
+  path: /work/fe/
 
 
