@@ -9,13 +9,15 @@
 		where id = #{id}
 	</select>
 
-	<select id="findByCondition" parameterType="${packageName}.${module}.vo.${ClassName}VO" resultType="${packageName}.${module}.vo.${ClassName}VO">
+	<select id="findByCondition" parameterType="${packageName}.${module}.vo.${ClassName}VO" resultType="${packageName}.${module}.model.${ClassName}">
 		select *
 		from
 		${tableName}
         <where>
         #foreach($column in $columns)
-        <if test="$column.attributeName != null"> and $column.attributeName = #{$column.name} </if>
+        <if test="$column.attributeName != null #if($column.type=="String") and $column.attributeName != '' #end">
+            and $column.name = #{$column.attributeName}
+        </if>
         #end
 		</where>
 	</select>
@@ -28,16 +30,22 @@
 		insert into ${tableName}
 		<trim prefix="(" suffix=")" suffixOverrides=",">
             #foreach($column in $columns)
+            #if($column.attributeName != "id")
 			<if test="$column.attributeName != null">
-				$column.name,
+				`$column.name`,
 			</if>
+			#end
             #end
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides=",">
             #foreach($column in $columns)
-			<if test="$column.attributeName != null">
-				$column.attributeName,
-			</if>
+                #if(($column.attributeName == "createTime" || $column.attributeName == "updateTime")&&$column.attributeName != "id")
+                now(),
+                #elseif($column.attributeName != "id")
+                <if test="$column.attributeName != null">
+                #{$column.attributeName},
+                </if>
+                #end
             #end
 		</trim>
 	</insert>
@@ -46,7 +54,11 @@
 		update ${tableName}
 		<set>
 		    #foreach($column in $columns)
-			<if test="$column.attributeName != null">`$column.name` = #{$column.attributeName}, </if>
+		        #if($column.attributeName == 'updateTime'&&$column.attributeName != 'id')
+                `$column.name` = now(),
+                #elseif($column.attributeName != 'id')
+			    <if test="$column.attributeName != null">`$column.name` = #{$column.attributeName}, </if>
+                #end
             #end
 		</set>
 		where id = #{id}

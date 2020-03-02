@@ -9,7 +9,7 @@ public interface ${ClassName}Dao {
 
     ${ClassName} findById(Integer id);
 
-    List<${ClassName}VO> findByCondition(${ClassName}VO ${className}VO);
+    List<${ClassName}> findByCondition(${ClassName}VO ${className}VO);
 
     void save(${ClassName} user);
 

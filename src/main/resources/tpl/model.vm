@@ -5,7 +5,6 @@ import lombok.Data;
 #if($hasDate)
 import java.util.Date;
 #end
-import java.util.List;
 
 @Data
 public class ${ClassName} {

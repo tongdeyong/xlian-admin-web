@@ -15,7 +15,7 @@ import java.util.List;
 public class ${ClassName}ServiceImpl implements ${ClassName}Service {
 
 	@Autowired
-	private ${ClassName}Dao$ {className}Dao;
+	private ${ClassName}Dao ${className}Dao;
 
 	@Override
 	public ${ClassName} findById(Integer id) {
@@ -23,22 +23,21 @@ public class ${ClassName}ServiceImpl implements ${ClassName}Service {
 	}
 
 	@Override
-	public List<${ClassName}VO> findByCondition(${ClassName}VO ${className}VO) {
+	public List<${ClassName}> findByCondition(${ClassName}VO ${className}VO) {
 		PageHelper.startPage(${className}VO.getPageNum(), ${className}VO.getPageSize());
-		List<${ClassName}VO> deptList = ${className}Dao.findByCondition(${className}VO);
-		return ${className}List;
+		return ${className}Dao.findByCondition(${className}VO);
 	}
 
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public void save(${ClassName} ${className}) {
-		deptDao.save(${className});
+		${className}Dao.save(${className});
 	}
 
 	@Override
 	@Transactional(rollbackFor = Exception.class)
 	public void update(${ClassName} ${className}) {
-		deptDao.update(${className});
+		${className}Dao.update(${className});
 	}
 
 	@Override
@@ -48,9 +47,7 @@ public class ${ClassName}ServiceImpl implements ${ClassName}Service {
 	}
 
 	@Override
-	public List<${ClassName}VO> findAll(${ClassName}VO ${className}VO) {
-		List<${ClassName}VO> ${className}List = ${className}Dao.findByCondition(${className}VO);
-		return ${className}List;
+	public List<${ClassName}> findAll(${ClassName}VO ${className}VO) {
+		return ${className}Dao.findByCondition(${className}VO);
 	}
-
 }

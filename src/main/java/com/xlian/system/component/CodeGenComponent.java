@@ -44,6 +44,10 @@ public class CodeGenComponent {
                         //添加到zip
                         if (templateFile.equals("mapper.vm")) {
                             zip.putNextEntry(new ZipEntry("src/main/resource/mybatis/" + module + File.separator + getFile(templateFile, item.get("ClassName").toString())));
+                        } else if (templateFile.equals("vue.vm")) {
+                            zip.putNextEntry(new ZipEntry("fe/src/view/" + module + File.separator + getFile(templateFile, item.get("ClassName").toString())));
+                        } else if (templateFile.equals("api.vm")) {
+                            zip.putNextEntry(new ZipEntry("fe/src/api/" + module + File.separator + getFile(templateFile, item.get("ClassName").toString())));
                         } else {
                             zip.putNextEntry(new ZipEntry("src/main/java/" + packageName + File.separator + module + File.separator + getFilePath(templateFile) + File.separator + getFile(templateFile, item.get("ClassName").toString())));
                         }
@@ -76,6 +80,10 @@ public class CodeGenComponent {
                 return className + "VO.java";
             case "mapper.vm":
                 return className + "Mapper.xml";
+            case "vue.vm":
+                return "index.vue";
+            case "api.vm":
+                return className + ".js";
             default:
                 return className + ".java";
         }

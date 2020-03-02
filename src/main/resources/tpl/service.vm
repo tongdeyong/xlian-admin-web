@@ -9,14 +9,14 @@ public interface ${ClassName}Service {
 
     ${ClassName} findById(Integer id);
 
-    List<${ClassName}VO> findByCondition(${ClassName}VO ${className}VO);
+    List<${ClassName}> findByCondition(${ClassName}VO ${className}VO);
 
     void save(${ClassName} user);
 
-    int update(${ClassName} user);
+    void update(${ClassName} user);
 
-    int deleteById(Integer id);
+    void deleteById(Integer id);
 
-    List<${ClassName}VO> findAll(${ClassName}VO ${className}VO);
+    List<${ClassName}> findAll(${ClassName}VO ${className}VO);
 
 }

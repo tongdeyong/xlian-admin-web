@@ -2,11 +2,6 @@ package ${packageName}.${module}.vo;
 
 import lombok.Data;
 
-#if($hasDate)
-import java.util.Date;
-#end
-import java.util.List;
-
 @Data
 public class ${ClassName}VO {
 
@@ -15,10 +10,11 @@ public class ${ClassName}VO {
     private Integer pageSize = 10;
 
     #foreach($column in $columns)
+    #if($column.attributeName!="id" && $column.type!="Date")
     /**
      * $column.comment
      */
     private $column.type $column.attributeName;
-
+    #end
     #end
 }

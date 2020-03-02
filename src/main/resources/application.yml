@@ -10,6 +10,14 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  thymeleaf:
+    prefix: classpath:/templates/
+    mode: HTML5
+    suffix: .html
 mybatis:
   mapper-locations: classpath:mybatis/**/*.xml
   type-aliases-package: com.xlian.**

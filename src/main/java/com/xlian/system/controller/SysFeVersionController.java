@@ -1,10 +1,10 @@
-package ${packageName}.${module}.controller;
+package com.xlian.system.controller;
 
 import com.github.pagehelper.Page;
-import ${packageName}.common.vo.Result;
-import ${packageName}.${module}.vo.${ClassName}VO;
-import ${packageName}.${module}.model.${ClassName};
-import ${packageName}.${module}.service.${ClassName}Service;
+import com.xlian.common.vo.Result;
+import com.xlian.system.vo.SysFeVersionVO;
+import com.xlian.system.model.SysFeVersion;
+import com.xlian.system.service.SysFeVersionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -13,21 +13,21 @@ import java.util.List;
 
 @RestController
 @Slf4j
-@RequestMapping("/${module}/${className}")
-public class ${ClassName}Controller {
+@RequestMapping("/system/sysFeVersion")
+public class SysFeVersionController {
 
     @Autowired
-    private ${ClassName}Service ${className}Service;
+    private SysFeVersionService sysFeVersionService;
 
     @GetMapping("/list")
-    public Result getPageList(${ClassName}VO ${className}VO) {
+    public Result getPageList(SysFeVersionVO sysFeVersionVO) {
         try {
-            List<${ClassName}> ${className}List = ${className}Service.findByCondition(${className}VO);
-            if (${className}List instanceof Page) {
-                Page page = (Page) ${className}List;
-                return Result.ok(${className}List, page.getPageNum(), page.getPageSize(), (int) page.getTotal());
+            List<SysFeVersion> sysFeVersionList = sysFeVersionService.findByCondition(sysFeVersionVO);
+            if (sysFeVersionList instanceof Page) {
+                Page page = (Page) sysFeVersionList;
+                return Result.ok(sysFeVersionList, page.getPageNum(), page.getPageSize(), (int) page.getTotal());
             }
-            return Result.ok(${className}List);
+            return Result.ok(sysFeVersionList);
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return Result.error(e.getMessage());
@@ -35,9 +35,9 @@ public class ${ClassName}Controller {
     }
 
     @GetMapping("/all-list")
-    public Result getAllList(${ClassName}VO ${className}VO) {
+    public Result getAllList(SysFeVersionVO sysFeVersionVO) {
         try {
-            return Result.ok(${className}Service.findAll(${className}VO));
+            return Result.ok(sysFeVersionService.findAll(sysFeVersionVO));
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return Result.error(e.getMessage());
@@ -45,9 +45,9 @@ public class ${ClassName}Controller {
     }
 
     @PostMapping("/save")
-    public Result save(@RequestBody ${ClassName} ${className}) {
+    public Result save(@RequestBody SysFeVersion sysFeVersion) {
         try {
-            ${className}Service.save(${className});
+            sysFeVersionService.save(sysFeVersion);
             return Result.ok();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -56,9 +56,9 @@ public class ${ClassName}Controller {
     }
 
     @RequestMapping("/update")
-    public Result update(@RequestBody ${ClassName} ${className}) {
+    public Result update(@RequestBody SysFeVersion sysFeVersion) {
         try {
-            ${className}Service.update(${className});
+            sysFeVersionService.update(sysFeVersion);
             return Result.ok();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -69,7 +69,7 @@ public class ${ClassName}Controller {
     @PostMapping("/delete/id}")
     public Result remove(@PathVariable Integer id) {
         try {
-            ${className}Service.deleteById(id);
+            sysFeVersionService.deleteById(id);
             return Result.ok();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
