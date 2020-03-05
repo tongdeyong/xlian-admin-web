@@ -42,7 +42,7 @@ public class FileController {
             byte[] fileBytes = file.getBytes();
             Path path = Paths.get(pathName + "/" + file.getOriginalFilename());
             Files.write(path, fileBytes);
-            return Result.ok(appServerHost + "/static/" + directory + "/" + file.getOriginalFilename());
+            return Result.ok(Long.toString(file.getSize()),appServerHost + "/static/" + directory + "/" + file.getOriginalFilename());
         } catch (IOException e) {
             log.error("文件{}读取失败", file.getName(), e);
             return Result.error("文件读取失败");
